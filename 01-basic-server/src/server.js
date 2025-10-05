@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   // const {method, url} = req
 
   if (method === 'GET' && url === '/users'){
-  // Early return - omitindo else statement
+  // early return - omitindo else statement
     return res
     .setHeader('Content-type', 'application/json')
     .end(JSON.stringify(users));
