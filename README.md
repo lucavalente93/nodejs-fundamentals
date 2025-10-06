@@ -1,16 +1,12 @@
-# Basic Node.js HTTP Server
+# Node.js Fundamentals
 
-A minimal HTTP server built with pure Node.js to practice handling HTTP requests and responses without frameworks.
+This repository contains small projects and exercises developed while studying the fundamentals of Node.js.  
+Each folder focuses on a specific concept or module of the Node.js runtime, built entirely with **native APIs** — no frameworks.
 
-## How to Run
+---
 
-1. Navigate to the server folder:
+## Repository structure
 
-```bash
-cd 01-basic-server
-```
-2. Run the server:
-```bash
-node server.js
-```
-The server will start on http://localhost:9393
+Each directory represents an independent exercise or learning module.  
+Every folder has its own README file explaining the topic in detail.
+
