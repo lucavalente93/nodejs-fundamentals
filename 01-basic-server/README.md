@@ -8,7 +8,7 @@ A minimal HTTP server built with pure Node.js to practice handling HTTP requests
    ```bash
    cd 01-basic-server
    ```
- Run the server:
+2. Run the server:
 ```bash
     node server.js
 ```
