@@ -9,7 +9,7 @@ A minimal HTTP server built with pure Node.js to practice handling HTTP requests
    cd 01-basic-server
    ```
 2. Run the server:
-```bash
+   ```bash
     node server.js
-```
+   ```
 The server will start on http://localhost:9393
