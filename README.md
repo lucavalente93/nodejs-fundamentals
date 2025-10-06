@@ -1,7 +1,7 @@
 # Node.js Fundamentals
 
 This repository contains small projects and exercises developed while studying the fundamentals of Node.js.  
-Each folder focuses on a specific concept or module of the Node.js runtime, built entirely with **native APIs** — no frameworks.
+Each folder focuses on a specific concept, functionality or module of the Node.js runtime, built entirely with **native APIs** — no frameworks.
 
 ---
 
