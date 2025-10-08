@@ -11,11 +11,11 @@ class OneToHundredStream extends Readable {
   // quando alguém consome os dados dessa stream.
   _read() {
     const i = this.index++; // incrementa o contador
-
+    const n = 5; // valor-limite de controle (value of control)
     // Simula uma geração lenta de dados (1 número por segundo)
     setTimeout(() => {
-      if (i > 100) {
-        // Quando atingir 100, sinaliza o fim da stream
+      if (i > n) {
+        // Quando atingir n, sinaliza o fim da stream
         this.push(null);
       } else {
         // Converte o número atual para Buffer
@@ -41,4 +41,8 @@ fetch('http://localhost:9394', {
   // Define que o corpo será transmitido em modo half-duplex:
   // envia os dados em partes e só depois lê a resposta.
   duplex: 'half'
+}).then(response=> {
+  response.text().then(data => {
+    console.log(data)
+  })
 })
