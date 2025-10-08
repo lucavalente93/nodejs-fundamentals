@@ -1,7 +1,7 @@
 // Importa o módulo HTTP nativo do Node.js
 import http from 'node:http'
 
-// Importa a classe Transform para criar streams transformadoras
+// Importa a classe Transform para criar transformer streams
 import { Transform } from 'node:stream'
 
 
@@ -22,17 +22,32 @@ class InverseNumberStream extends Transform {
 
 
 // Cria um servidor HTTP que escuta requisições
-const server = http.createServer((req, res) => {
-  // A requisição (req) é uma stream Readable
-  // O response (res) é uma stream Writable
+// A requisição (req) é uma stream Readable
+// O response (res) é uma stream Writable
+const server = http.createServer(async(req, res) => {
+  const buffers = []
 
+  for await (const chunk of req) {
+    buffers.push(chunk)
+  }
+
+  const fullStreamContent = Buffer.concat(buffers).toString()
+
+  console.log(fullStreamContent)
+
+  return res.end(fullStreamContent)
   // Encadeia (pipe) as streams:
   // req → InverseNumberStream → res
-  return req
-    // Recebe os dados da requisição
-    .pipe(new InverseNumberStream())
-    // Envia a saída transformada diretamente na resposta
-    .pipe(res)
+
+
+  // IGNORAR
+  // -----------
+  // return req
+  //   // Recebe os dados da requisição
+  //   .pipe(new InverseNumberStream())
+  //   // Envia a saída transformada diretamente na resposta
+  //   .pipe(res)
+  // ------------- 
 })
 
 
