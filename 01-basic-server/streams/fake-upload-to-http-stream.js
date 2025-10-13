@@ -10,23 +10,23 @@ class OneToHundredStream extends Readable {
   // Método chamado automaticamente pelo Node
   // quando alguém consome os dados dessa stream.
   _read() {
-    const i = this.index++; // incrementa o contador
+    const i = this.index++ // incrementa o contador
     const n = 5; // valor-limite de controle (value of control)
+    
     // Simula uma geração lenta de dados (1 número por segundo)
     setTimeout(() => {
       if (i > n) {
         // Quando atingir n, sinaliza o fim da stream
-        this.push(null);
+        this.push(null)
       } else {
         // Converte o número atual para Buffer
         // e o envia para o consumidor da stream
-        const buf = Buffer.from(String(i));
+        const buf = Buffer.from(String(i))
         this.push(buf);
       }
-    }, 1000);
+    }, 1000)
   }
 }
-
 
 // Faz uma requisição HTTP POST para o servidor local
 // enviando a stream como corpo (body) da requisição.
