@@ -31,23 +31,13 @@ const server = http.createServer(async(req, res) => {
     buffers.push(chunk)
   }
 
+  // Une vários chunks em um único "pedaço" 
   const fullStreamContent = Buffer.concat(buffers).toString()
 
   console.log(fullStreamContent)
 
   return res.end(fullStreamContent)
-  // Encadeia (pipe) as streams:
-  // req → InverseNumberStream → res
-
-
-  // IGNORAR
-  // -----------
-  // return req
-  //   // Recebe os dados da requisição
-  //   .pipe(new InverseNumberStream())
-  //   // Envia a saída transformada diretamente na resposta
-  //   .pipe(res)
-  // ------------- 
+  
 })
 
 

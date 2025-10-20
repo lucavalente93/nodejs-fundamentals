@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-# Node.js Fundamentals
-
-This repository contains small projects and exercises developed while studying the fundamentals of Node.js.  
-Each folder focuses on a specific concept, functionality or module of the Node.js runtime, built entirely with **native APIs** — no frameworks.
-
----
-
-## Repository structure
-
-Each directory represents an independent exercise or learning module.  
-Every folder has its own README file explaining the topic in detail.
-
-=======
 # HTTP Streams Example
 
 ### This project demonstrates how to use Node.js streams to send and process data over HTTP.
@@ -32,4 +18,3 @@ In another terminal, run the client:
   node fake-upload-to-http-stream.js
  ````
 You’ll see the server log each transformed (inverted) number in the console.
->>>>>>> 4553604 (fix: Add missing async/await to soft-coded constant retrieval)
